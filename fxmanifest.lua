@@ -4,9 +4,12 @@ lua54 'yes'
 
 author 'Goo$e'
 title 'g-ids'
-description 'Simple but functional ID toggle'
+description 'Simple id toggle script, Intended for Qbox'
 version '1.0.0'
 
+shared_scripts {
+    'config.lua',
+}
 
 client_scripts {
     'client.lua',
