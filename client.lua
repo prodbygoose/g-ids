@@ -1,9 +1,8 @@
--- state for displaying IDs
 local showIDs = false
 
--- toggle ID 
+-- toggle ids 
 RegisterCommand('ids', function()
-    showIDs = not showIDs -- Toggle state
+    showIDs = not showIDs
     if showIDs then
         print("Player IDs are now visible.")
     else
@@ -11,7 +10,6 @@ RegisterCommand('ids', function()
     end
 end, false)
 
--- IDs above players' heads
 CreateThread(function()
     while true do
         if showIDs then
@@ -25,12 +23,11 @@ CreateThread(function()
 
                 -- display IDs for players within 25 meters
                 if distance < 25.0 then
-                    -- Get head bone position and add offset
+                    -- head bone position and add offset
                     local boneIndex = GetPedBoneIndex(targetPed, 12844) -- Head bone index
                     local headCoords = GetWorldPositionOfEntityBone(targetPed, boneIndex)
                     local targetDisplayCoords = vector3(headCoords.x, headCoords.y, headCoords.z + 0.5)
 
-                    -- text above the player's head
                     DrawText3D(targetDisplayCoords, string.format("[ %d ]", GetPlayerServerId(playerId)), 255, 255, 255, 150) -- 50% opacity
                 end
             end
@@ -39,7 +36,7 @@ CreateThread(function()
     end
 end)
 
--- draw 3D text
+-- draw text
 function DrawText3D(coords, text, r, g, b, a)
     local onScreen, x, y = World3dToScreen2d(coords.x, coords.y, coords.z)
     local distance = #(GetGameplayCamCoords() - coords)
@@ -47,7 +44,7 @@ function DrawText3D(coords, text, r, g, b, a)
     local fov = (1 / GetGameplayCamFov()) * 100
     scale = scale * fov
 
-    -- text is scaled correctly for visibility
+    -- text is scaled
     scale = scale * 2
 
     if onScreen then
