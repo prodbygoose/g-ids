@@ -1,5 +1,5 @@
 # G-ID's 🆔
-Simple but optimized id toggling. ( /ids )
+Simple id toggling. ( /ids )
 Intended for Qbox
 
 Resource was made to be minimal, out of the box it is configurable.
