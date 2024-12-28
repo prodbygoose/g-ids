@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Goo$e'
 title 'g-ids'
-description 'Simple id toggle script, Intended for Qbox'
+description 'Simple id toggle, Intended for Qbox'
 version '1.0.0'
 
 shared_scripts {
