@@ -1,4 +1,4 @@
-# G-ID's
+# G-ID's 🆔
 Simple but highly functional id toggling script, Intended for Qbox
 Resource was made to be minimal & optimized, out of the box it is pretty configurable.
 
